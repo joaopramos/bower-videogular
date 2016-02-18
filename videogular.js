@@ -711,7 +711,9 @@ angular.module("com.2fdevs.videogular")
         };
 
         // Empty mediaElement on destroy to avoid that Chrome downloads video even when it's not present
-        $scope.$on('$destroy', this.clearMedia.bind(this));
+        // DISABLED: to allow the element to be kept on the view during UI-ROUTER transition
+        
+        //$scope.$on('$destroy', this.clearMedia.bind(this));
 
         // Empty mediaElement when router changes
         $scope.$on('$routeChangeStart', this.onRouteChange.bind(this));
